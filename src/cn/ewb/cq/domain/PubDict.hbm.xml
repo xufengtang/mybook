@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="cn.ewb.cq.domain">
+
+	<class name="PubDict" table="tm_pub_dict">
+		<id name="id" length="50">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="dictType" length="50" column = "DICT_TYPE" />
+		<property name="dictCode" length="50" column = "DICT_CODE" />
+		<property name="dictName" length="200" column = "DICT_NAME" />
+		<property name="delFlg" length="1" column = "DEL_FLG" />
+		<property name="orderNo" length="2" column = "ORDER_NO" />
+		<property name="createId" length="20" column = "CREATE_ID"/>	
+		<property name="createTime" column = "CREATE_TIME"/>
+		<property name="updateId" length="20" column = "UPDATE_ID"/>
+		<property name="updateTime" column = "UPDATE_TIME"/>
+	</class>
+	
+</hibernate-mapping>

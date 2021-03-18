@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="cn.ewb.cq.domain">
+
+	<class name="Grammar" table="tc_grammar">
+		<id name="id" length="50">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="titleName" length="100" column="title_name"/>
+		<property name="followValue" length="500" column="follow_value"/>
+		<property name="explainValue" length="1000" column="explain_value"/>
+		<property name="example1" length="1000" column="example1"/>
+		<property name="example2" length="1000" column="example2"/>
+		<property name="example3" length="1000" column="example3"/>
+		<property name="example4" length="1000" column="example4"/>
+		<property name="example5" length="1000" column="example5"/>
+		<property name="example6" length="1000" column="example6"/>
+		<property name="content" length="2000" column="content"/>
+		<property name="orderNum"  column="order_num"/>
+		<property name="delFlg" length="1" column="del_flg"/>
+		<property name="createId" length="20" column = "CREATE_ID"/>	
+		<property name="createTime" column = "CREATE_TIME"/>
+		<property name="updateId" length="20" column = "UPDATE_ID"/>
+		<property name="updateTime" column = "UPDATE_TIME"/>
+		<many-to-one name="unitInfo" column="unitInfo_id"></many-to-one>
+		
+		
+	
+	</class>
+</hibernate-mapping>

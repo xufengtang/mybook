@@ -1,0 +1,190 @@
+body{
+	SCROLLBAR-FACE-COLOR: #ffffff; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #ADD1EB; 
+	SCROLLBAR-SHADOW-COLOR: #0493DA; 
+	SCROLLBAR-3DLIGHT-COLOR: #ffffff; 
+	SCROLLBAR-ARROW-COLOR: #0493DA; 
+	SCROLLBAR-TRACK-COLOR: #ffffff; 
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+}
+
+/*按钮样式 */
+.button{
+	background-image:url(../images/button_bg.gif);
+	background-color:#FFFFFF;
+	border-top:1px solid #C8CCCB;
+	border-left:1px solid #C8CCCB;
+	border-bottom:1px solid #C8CCCB;
+	border-right:1px solid #C8CCCB;
+	background-repeat:repeat-x;
+	padding-top:2px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	margin-right:0px;
+	margin-left:20px;
+	text-decoration:line;	
+	font-size: 12px;
+	color: #000002;
+
+}
+.fileButton{
+	background-color:#FFFFFF;
+	border-top:1px solid #C8CCCB;
+	border-left:1px solid #C8CCCB;
+	border-bottom:1px solid #C8CCCB;
+	border-right:1px solid #C8CCCB;
+	background-repeat:repeat-x;
+	padding-top:2px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	margin-right:0px;
+	margin-left:20px;
+	text-decoration:line;	
+	font-size: 12px;
+	color: #000002;
+}
+
+input{border-color:expression((this.type=="text"||this.type=="password")?"#DADADA":"")} 
+input{border-style:expression((this.type=="text"||this.type=="password")?"solid":"")} 
+input{border-width:expression((this.type=="text"||this.type=="password")?"1px":"")}
+TEXTAREA{color:000000;border: 1px solid #DADADA;background-color: #ffffff;}
+SELECT{FONT-SIZE: 9pt;FONT-FAMILY: 宋体} 
+
+
+/*表格样式*/
+.border{
+  BORDER-RIGHT: #9EC5F1 1px solid; 
+  BORDER-TOP: #9EC5F1 1px solid;
+  BORDER-LEFT: #9EC5F1 1px solid; 
+  BORDER-BOTTOM: #9EC5F1 1px solid;
+  WIDTH: 99%;
+  BACKGROUND-COLOR: #D0E1F3;  
+  }
+  
+.borderFile{
+  BORDER-RIGHT: #9EC5F1 1px solid; 
+  BORDER-LEFT: #9EC5F1 1px solid; 
+  BORDER-BOTTOM: #9EC5F1 1px solid;
+  WIDTH: 99%;
+  BACKGROUND-COLOR: #D0E1F3;  
+  } 
+  
+.borderFile1{
+  BORDER-RIGHT: #9EC5F1 1px solid; 
+  BORDER-LEFT: #9EC5F1 1px solid; 
+  WIDTH: 99%;
+  BACKGROUND-COLOR: #D0E1F3;  
+  } 
+
+.Navigation{background:#4D9FE0;height:26;font-size:12px;COLOR:white;font-weight: bold;border-bottom:1px solid #dadada;text-align:left;}
+.Navigation2{background:blue;height:26;font-size:12px;COLOR:white;font-weight: bold;border-bottom:1px solid #dadada;text-align:center;}
+.Navigationtdbg{ background:#F1F1F1; padding:0 3px; height:22;}
+
+.title{
+	background:url("../images/Titlebg.gif");
+	height:20px;
+	font-size:12px;
+	COLOR:white;
+	border-bottom:1px solid #dadada;
+	text-align:center;
+	letter-spacing:2px;
+	}
+.title1{
+	background:url("../images/Titlebg.gif");
+	height:33px;
+	font-size:12px;
+	COLOR:white;
+	border-bottom:1px solid #dadada;
+	text-align:center;
+	letter-spacing:2px;
+	}	
+	
+.searchTitle{
+	background-color:#4D9FE0;
+	height:20px;
+	font-size:12px;
+	COLOR:white;
+	border-bottom:1px solid #dadada;
+	text-align:center;
+	letter-spacing:2px;
+}	
+
+.myEdit{
+	background:url("../images/Titlebg.gif");
+	height:10px;
+	font-size:12px;
+	COLOR:white;
+	border-bottom:1px solid #dadada;
+	text-align:center;
+	letter-spacing:2px;
+}
+	
+.titletdbg{
+	background:#FFFFFF; 
+	text-align:center;
+	padding:0 3px; height:22;
+}
+
+.titletdbg1{
+	background:#FFFFFF; 
+	text-align:left;
+	padding:0 3px; height:33;
+}
+
+.title A:link{
+	font:normal 12px 宋体;
+	color:#000000;
+	text-decoration:none;
+}
+.title A:visited{
+	COLOR: #000000;
+	TEXT-DECORATION: none
+}
+.title A:active{
+	COLOR: #000000;
+	TEXT-DECORATION: none
+}
+.title A:hover{
+	COLOR: #000000;
+	TEXT-DECORATION: underline
+}
+
+
+
+
+/*HX_managemain.asp中样式*/
+.TOPBg{
+	background:url("../images/TOPBg.gif");
+	HEIGHT:60px;}
+.LogoStyle{
+	font-family:华文新魏;
+	color:#FFFFFF;
+	WIDTH: 100%;
+	FONT-WEIGHT:bold;
+	FONT-SIZE: 18pt;
+	}
+.ManageMainMenu{
+    background:url("../images/TopMenuBg.jpg");
+	height:35px;
+	font-size:12px;
+	color:#FFFFFF; }
+ 
+.WSOASTopMenuFont{
+	font-size:12px;
+	color:#FFFFFF;
+}
+ 
+.ManageMainBgcolor{
+	background-color:#79C4FF; 
+}
+.tolalFont{
+	font-size: medium;
+	font: bold;
+	color: red;
+}
+.tilteFont{
+	font: bold;
+}
+

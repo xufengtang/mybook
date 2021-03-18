@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="cn.ewb.cq.domain">
+
+	<class name="ListenInfo" table="tc_listen_info">
+		<id name="id" length="50">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="levelId" length="1" column="level_id"/>
+		<property name="listenName" length="50" column="listen_name"/>
+		<property name="listenUrl" length="1000" column="listen_url"/>
+		<property name="orderNum"  column="order_Num"/>
+		<property name="delFlg" length="1" column="del_flg"/>
+		<property name="createId" length="20" column = "create_id"/>	
+		<property name="createTime" column = "create_time"/>
+		<property name="updateId" length="20" column = "update_id"/>
+		<property name="updateTime" column = "update_time"/>
+	</class>
+</hibernate-mapping>

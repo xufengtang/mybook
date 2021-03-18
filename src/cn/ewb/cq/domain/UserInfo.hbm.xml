@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="cn.ewb.cq.domain">
+
+	<class name="UserInfo" table="tm_user_info">
+		<id name="id" length="50">
+			<generator class="assigned"/>
+		</id>
+		<property name="userCode" length="20" column = "USER_Code" />		
+		<property name="userName" length="20" column = "USER_NAME" />
+		<property name="telephone" length="50" column = "TELEPHONE" />
+		<property name="delFlg" length="1" column = "DEL_FLG" />
+		<property name="createId" length="20" column = "CREATE_ID"/>	
+		<property name="createTime" column = "CREATE_TIME"/>
+		<property name="updateId" length="20" column = "UPDATE_ID"/>
+		<property name="updateTime" column = "UPDATE_TIME"/>
+		<many-to-one name="department" column="department_id"></many-to-one>
+		<many-to-one name="post" column="post_id"></many-to-one>
+		<one-to-one name="passwd"></one-to-one>
+	
+		
+	    <bag name="userRole">
+		<key column="user_id"/>
+		<one-to-many class="UserRole"/>
+		</bag>
+		<bag name="userDepart">
+		<key column="user_id"/>
+		<one-to-many class="UserDepart"/>
+		</bag>
+		<!-- 
+		<bag name="pubNoticeUser">
+		<key column="user_id"/>
+		<one-to-many class="PubNoticeUser"/>
+		</bag> -->
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+
+<!-- ================================================ Form Bean Definitions -->
+
+    <form-beans>
+    <form-bean name="LoginForm" type="cn.ewb.cq.framework.form.LoginForm"></form-bean>
+    <form-bean name="PwdForm" type="cn.ewb.cq.framework.form.PwdForm"></form-bean>
+    <form-bean name="PwdInitForm" type="cn.ewb.cq.framework.form.PwdInitForm"></form-bean>
+    <form-bean name="ShowMenuForm" type="cn.ewb.cq.framework.form.ShowMenuForm"></form-bean>
+    <form-bean name="DepartmentForm" type="cn.ewb.cq.framework.form.DepartmentForm"></form-bean>
+    <form-bean name="RoleForm" type="cn.ewb.cq.framework.form.RoleForm"></form-bean>
+    <form-bean name="PostForm" type="cn.ewb.cq.framework.form.PostForm"></form-bean>
+    <form-bean name="AuthorityForm" type="cn.ewb.cq.framework.form.AuthorityForm"></form-bean>
+    <form-bean name="MenuForm" type="cn.ewb.cq.framework.form.MenuForm"></form-bean>
+    <form-bean name="UserEditForm" type="cn.ewb.cq.framework.form.UserEditForm"></form-bean>
+    <form-bean name="SearchUserForm" type="cn.ewb.cq.framework.form.SearchUserForm"></form-bean>
+    <form-bean name="UserInfoEditForm" type="cn.ewb.cq.framework.form.UserInfoEditForm"></form-bean>
+    <form-bean name="UploadFileForm" type="cn.ewb.cq.framework.form.UploadFileForm"></form-bean>
+    <form-bean name="UnitEditForm" type="cn.ewb.cq.flow.form.UnitEditForm"></form-bean>
+    <form-bean name="UnitSearchForm" type="cn.ewb.cq.flow.form.UnitSearchForm"></form-bean>
+    <form-bean name="GrammarEditForm" type="cn.ewb.cq.flow.form.GrammarEditForm"></form-bean>
+    <form-bean name="GrammarSearchForm" type="cn.ewb.cq.flow.form.GrammarSearchForm"></form-bean>
+    <form-bean name="LisenceCreateForm" type="cn.ewb.cq.flow.form.LisenceCreateForm"></form-bean>
+    <form-bean name="NHKInfoForm" type="cn.ewb.cq.flow.form.NHKInfoForm"></form-bean>
+    <form-bean name="ListenInfoSearchForm" type="cn.ewb.cq.flow.form.ListenInfoSearchForm"></form-bean>
+    <form-bean name="ListenInfoEditForm" type="cn.ewb.cq.flow.form.ListenInfoEditForm"></form-bean>
+    <form-bean name="MovieInfoEditForm" type="cn.ewb.cq.flow.form.MovieInfoEditForm"></form-bean>
+    <form-bean name="MovieInfoSearchForm" type="cn.ewb.cq.flow.form.MovieInfoSearchForm"></form-bean>
+    
+    
+    
+    </form-beans>
+
+
+<!-- ========================================= Global Exception Definitions -->
+
+    <global-exceptions>
+     
+        <exception
+            key="global.error.message"
+            type="java.lang.Exception"
+            path="/page/framework/error.jsp"/>
+     
+    </global-exceptions>
+
+
+<!-- =========================================== Global Forward Definitions -->
+
+    <global-forwards>
+        <!-- Default forward to "Welcome" action -->
+        <!-- Demonstrates using index.jsp to forward -->
+
+    </global-forwards>
+
+
+<!-- =========================================== Action Mapping Definitions -->
+
+    <action-mappings>
+         
+    <!-- 登录begin -->
+    <action path="/login"
+    type="cn.ewb.cq.framework.action.LoginAction"
+    name="LoginForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/frame.jsp"></forward>
+    <forward name="fail" path="/login.jsp"></forward>
+    <forward name="pwdInit" path="/page/framework/pwdInit.jsp"></forward>
+    </action>
+    
+    <action path="/loginOut"
+    type="cn.ewb.cq.framework.action.LoginAction"
+    name="LoginForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/login.jsp"></forward>
+    </action>
+    <!-- 登录end -->
+    
+   
+    
+    
+    
+    
+    
+    <!-- 密码修正begin -->
+    <action path="/pwdChange"
+    type="cn.ewb.cq.framework.action.PwdAction"
+    name="PwdForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/page/framework/pwdMaster.jsp"></forward>
+    </action>
+    <action path="/pwdInit"
+    type="cn.ewb.cq.framework.action.PwdInitAction"
+    name="PwdInitForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/page/framework/pwdInit.jsp"></forward>
+    </action>
+    <!-- 密码修正end -->
+    
+    <!-- 功能模块读取begin -->
+    <action path="/showMenu"
+    type="cn.ewb.cq.framework.action.ShowMenuAction"
+    name="ShowMenuForm"
+    scope="request"
+    validate="false">
+    <forward name="success" path="/page/framework/index.jsp"></forward>
+    </action>
+    <!-- 功能模块读取end -->
+    
+    <!-- 部门管理begin -->
+    <action path="/searchDepart"
+    type="cn.ewb.cq.framework.action.DepartmentAction"
+    name="DepartmentForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/departmentMaster.jsp"></forward>
+    </action>
+    <action path="/saveDepart"
+    type="cn.ewb.cq.framework.action.DepartmentAction"
+    name="DepartmentForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/departmentMaster.jsp"></forward>
+    </action>
+    <action path="/delDepart"
+    type="cn.ewb.cq.framework.action.DepartmentAction"
+    name="DepartmentForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/departmentMaster.jsp"></forward>
+    </action>
+    <!-- 部门管理end -->
+    
+    <!-- 角色管理begin-->
+    <action path="/searchRole"
+    type="cn.ewb.cq.framework.action.RoleAction"
+    name="RoleForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/roleMaster.jsp"></forward>
+    </action> 
+    <action path="/saveRole"
+    type="cn.ewb.cq.framework.action.RoleAction"
+    name="RoleForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/roleMaster.jsp"></forward>
+    </action>
+    <action path="/delRole"
+    type="cn.ewb.cq.framework.action.RoleAction"
+    name="RoleForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/roleMaster.jsp"></forward>
+    </action>	
+    <!--角色管理end-->
+    
+    <!--职务管理begin-->
+    <action path="/searchPost"
+    type="cn.ewb.cq.framework.action.PostAction"
+    name="PostForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/postMaster.jsp"></forward>
+    </action>
+    <action path="/savePost"
+    type="cn.ewb.cq.framework.action.PostAction"
+    name="PostForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/postMaster.jsp"></forward>
+    </action>
+    <action path="/delPost"
+    type="cn.ewb.cq.framework.action.PostAction"
+    name="PostForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/postMaster.jsp"></forward>
+    </action>
+    <!--职务管理end-->
+    
+    <!--权限管理begin-->
+    <action path="/searchAuthority"
+    type="cn.ewb.cq.framework.action.AuthorityAction"
+    name="AuthorityForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/authorityMaster.jsp"></forward>
+    </action>
+    <action path="/saveAuthority"
+    type="cn.ewb.cq.framework.action.AuthorityAction"
+    name="AuthorityForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/authorityMaster.jsp"></forward>
+    </action>
+    <!--权限管理end-->
+    
+    <!-- 菜单管理begin -->
+    <action path="/searchMenu"
+    type="cn.ewb.cq.framework.action.MenuAction"
+    name="MenuForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/menuMaster.jsp"></forward>
+    </action>
+    
+    <action path="/saveMenu"
+    type="cn.ewb.cq.framework.action.MenuAction"
+    name="MenuForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/menuMaster.jsp"></forward>
+    </action>
+    
+    <action path="/delMenu"
+    type="cn.ewb.cq.framework.action.MenuAction"
+    name="MenuForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/menuMaster.jsp"></forward>
+    </action>
+    <!-- 菜单管理end -->
+    
+    
+    <!-- 员工管理start-->
+    <action path="/searchUser"
+    type="cn.ewb.cq.framework.action.SearchUserAction"
+    name="SearchUserForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/employeeSearch.jsp"></forward>
+    </action>
+    <action path="/initEditUser"
+    type="cn.ewb.cq.framework.action.UserEditAction"
+    name="UserEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/employeeEdit.jsp"></forward>
+    </action>
+    <action path="/addUser"
+    type="cn.ewb.cq.framework.action.UserEditAction"
+    name="UserEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/employeeEdit.jsp"></forward>
+    </action>
+    <action path="/editUser"
+    type="cn.ewb.cq.framework.action.UserEditAction"
+    name="UserEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/employeeEdit.jsp"></forward>
+    </action>
+    <action path="/pwdReset"
+    type="cn.ewb.cq.framework.action.UserEditAction"
+    name="UserEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/employeeEdit.jsp"></forward>
+    </action>
+    <action path="/deleteUser"
+    type="cn.ewb.cq.framework.action.SearchUserAction"
+    name="SearchUserForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/employeeSearch.jsp"></forward>
+    </action>
+  	<action path="/initUserInfoEdit"
+    type="cn.ewb.cq.framework.action.UserInfoEditAction"
+    name="UserInfoEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/userInfoEdit.jsp"></forward>
+    </action>
+    <action path="/saveUserInfoEdit"
+    type="cn.ewb.cq.framework.action.UserInfoEditAction"
+    name="UserInfoEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/framework/userInfoEdit.jsp"></forward>
+    </action>
+    <!-- 员工管理end -->
+    
+    <!-- 单元管理start -->
+    <action path="/searchUnitInit"
+    type="cn.ewb.cq.flow.action.UnitSearchAction"
+    name="UnitSearchForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/unitSearch.jsp"></forward>
+    </action>
+    
+    <action path="/searchUnit"
+    type="cn.ewb.cq.flow.action.UnitSearchAction"
+    name="UnitSearchForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/unitSearch.jsp"></forward>
+    </action>
+    
+    <action path="/deleteUnit"
+    type="cn.ewb.cq.flow.action.UnitSearchAction"
+    name="UnitSearchForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/unitSearch.jsp"></forward>
+    </action>
+
+    <action path="/initUnit"
+    type="cn.ewb.cq.flow.action.UnitEditAction"
+    name="UnitEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/unitEdit.jsp"></forward>
+    </action>
+    
+    <action path="/saveUnit"
+    type="cn.ewb.cq.flow.action.UnitEditAction"
+    name="UnitEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/unitEdit.jsp"></forward>
+    </action>
+      
+    <action path="/initGrammar"
+    type="cn.ewb.cq.flow.action.GrammarEditAction"
+    name="GrammarEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/grammarEdit.jsp"></forward>
+    </action>
+    
+    <action path="/getUnitList"
+    type="cn.ewb.cq.flow.action.GrammarEditAction"
+    name="GrammarEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/grammarEdit.jsp"></forward>
+    </action>
+    
+    <action path="/saveGrammar"
+    type="cn.ewb.cq.flow.action.GrammarEditAction"
+    name="GrammarEditForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/grammarEdit.jsp"></forward>
+    </action>
+    
+    <action path="/initSearchGrammar"
+    type="cn.ewb.cq.flow.action.GrammarSearchAction"
+    name="GrammarSearchForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/grammarSearch.jsp"></forward>
+    </action>
+    
+    
+    <action path="/grammarSearch"
+    type="cn.ewb.cq.flow.action.GrammarSearchAction"
+    name="GrammarSearchForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/grammarSearch.jsp"></forward>
+    </action>
+    
+    <action path="/deleteGrammar"
+    type="cn.ewb.cq.flow.action.GrammarSearchAction"
+    name="GrammarSearchForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/grammarSearch.jsp"></forward>
+    </action>
+    <!-- 单元管理end -->
+    
+    <!-- 激活码管理start -->
+    <action path="/lisenceCreate"
+    type="cn.ewb.cq.flow.action.LisenceCreateAction"
+    name="LisenceCreateForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/lisenceCreate.jsp"></forward>
+    </action>
+    
+    
+    <action path="/lisenceCodeSearch"
+    type="cn.ewb.cq.flow.action.LisenceCreateAction"
+    name="LisenceCreateForm"
+    scope="request"
+    validate="false"
+    parameter="method">
+    <forward name="success" path="/page/flow/lisenceCreate.jsp"></forward>
+    </action>
+     <!--激活码管理end -->
+     
+     <!-- NHK地址管理start -->
+     <action path="/initNHKInfo"
+     type="cn.ewb.cq.flow.action.NHKInfoAction"
+     name="NHKInfoForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/nhkInfo.jsp"></forward>
+     </action>
+     
+     <action path="/saveUrl"
+     type="cn.ewb.cq.flow.action.NHKInfoAction"
+     name="NHKInfoForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/nhkInfo.jsp"></forward>
+     </action>
+     <!-- NHK地址管理end -->
+     
+     <!-- 听力录音管理start -->
+     <action path="/searchListenInfoInit"
+     type="cn.ewb.cq.flow.action.ListenInfoSearchAction"
+     name="ListenInfoSearchForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/listenInfoSearch.jsp"></forward>
+     </action>     
+     <action path="/searchListenInfo"
+     type="cn.ewb.cq.flow.action.ListenInfoSearchAction"
+     name="ListenInfoSearchForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/listenInfoSearch.jsp"></forward>
+     </action>  
+     
+     <action path="/listenInfoDel"
+     type="cn.ewb.cq.flow.action.ListenInfoSearchAction"
+     name="ListenInfoSearchForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/listenInfoSearch.jsp"></forward>
+     </action>  
+     
+     <action path="/listenInfoEditInit"
+     type="cn.ewb.cq.flow.action.ListenInfoEditAction"
+     name="ListenInfoEditForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/listenInfoEdit.jsp"></forward>
+     </action>  
+     
+     <action path="/saveListenInfo"
+     type="cn.ewb.cq.flow.action.ListenInfoEditAction"
+     name="ListenInfoEditForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/listenInfoEdit.jsp"></forward>
+     </action>  
+     
+     <!-- 听力录音管理end -->
+
+	 <!-- 视频管理start -->
+
+	 <action path="/searchMovieInfoInit"
+     type="cn.ewb.cq.flow.action.MovieInfoSearchAction"
+     name="MovieInfoSearchForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/movieInfoSearch.jsp"></forward>
+     </action>
+     
+     <action path="/searchMovieInfo"
+     type="cn.ewb.cq.flow.action.MovieInfoSearchAction"
+     name="MovieInfoSearchForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/movieInfoSearch.jsp"></forward>
+     </action>    
+     
+     <action path="/movieInfoDel"
+     type="cn.ewb.cq.flow.action.MovieInfoSearchAction"
+     name="MovieInfoSearchForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/movieInfoSearch.jsp"></forward>
+     </action>    
+     
+	
+
+     <action path="/movieInfoEditInit"
+     type="cn.ewb.cq.flow.action.MovieInfoEditAction"
+     name="MovieInfoEditForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/movieInfoEdit.jsp"></forward>
+     </action>  
+     
+     <action path="/saveMovieInfo"
+     type="cn.ewb.cq.flow.action.MovieInfoEditAction"
+     name="MovieInfoEditForm"
+     scope="request"
+     validate="false"
+     parameter="method">
+     <forward name="success" path="/page/flow/movieInfoEdit.jsp"></forward>
+     </action>  
+	
+	 <!-- 视频管理end -->
+
+     
+        
+
+
+     </action-mappings>
+<!-- ======================================== Message Resources Definitions -->
+  <message-resources parameter="MessageResources" />
+
+ 
+</struts-config>
+

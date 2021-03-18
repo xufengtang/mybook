@@ -1,0 +1,54 @@
+﻿<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+	    <property name="hibernate.connection.url">jdbc:mysql://localhost/mybook</property>
+	    <property name="hibernate.connection.username">root</property>
+	    <property name="hibernate.connection.password">admin</property>
+	    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+	    <property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		
+        <!-- 连接池 -->
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <!-- 最大连接数 -->
+        <property name="hibernate.c3p0.max_size">1000</property>
+        <!-- 最小连接数 -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <!-- 获得连接的超时时间,如果超过这个时间,会抛出异常，单位毫秒 -->
+        <property name="hibernate.c3p0.timeout">5000</property>
+        <!-- 最大的PreparedStatement的数量 -->
+        <property name="hibernate.c3p0.max_statements">500</property>
+        <!-- 每隔120秒检查连接池里的空闲连接 ，单位是秒 -->
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <!-- 当连接池里面的连接用完的时候，C3P0一下获取的新的连接数 -->
+        <property name="hibernate.c3p0.acquire_increment">5</property>
+        <!-- 每次都验证连接是否可用 -->
+        <property name="hibernate.c3p0.validate">true</property>
+        <!-- 结束 -->
+
+		
+		<mapping resource="cn/ewb/cq/domain/PubDict.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/UserInfo.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/Pwd.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/Department.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/Post.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/UserRole.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/Role.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/Authority.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/Menu.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/UserDepart.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/UnitInfo.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/Grammar.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/UserMember.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/LisenceInfo.hbm.xml"/>
+	    <mapping resource="cn/ewb/cq/domain/NHKInfo.hbm.xml"/>
+	    <mapping resource="cn/ewb/cq/domain/ListenInfo.hbm.xml"/>
+		<mapping resource="cn/ewb/cq/domain/MovieInfo.hbm.xml"/>
+	    
+	    
+	</session-factory>
+</hibernate-configuration>

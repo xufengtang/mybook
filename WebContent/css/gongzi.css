@@ -1,0 +1,23 @@
+table.imagetable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+  BORDER-RIGHT: #9EC5F1 1px ; 
+  BORDER-TOP: #9EC5F1 1px ;
+  BORDER-LEFT: #9EC5F1 1px ; 
+  BORDER-BOTTOM: #9EC5F1 1px ;
+}
+table.imagetable th {
+	background:#4D9FE0 ;
+	border-width: 1px;
+	padding: 3px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td {
+	background:#E5F5FF ;
+	border-width: 1px;
+	padding: 3px;
+	border-style: solid;
+	border-color: #999999;
+}

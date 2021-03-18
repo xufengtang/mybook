@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>MYBOOK</display-name>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<filter>  
+	 <filter-name>loginCheck</filter-name>  
+	 <filter-class>  
+	  	cn.ewb.cq.filter.FilterLogin
+	 </filter-class>  
+	</filter> 
+ 
+	<filter-mapping>  
+	 <filter-name>loginCheck</filter-name>  
+	 <url-pattern>/*</url-pattern>  
+	</filter-mapping>
+	
+	<filter>  
+	 <filter-name>encoding</filter-name>  
+	 <filter-class>  
+	      cn.ewb.cq.filter.FilterEncoding   
+	 </filter-class>  
+	 <init-param>  
+	  <param-name>encoding</param-name>  
+	  <param-value>utf-8</param-value>  
+	 </init-param>
+	</filter> 
+ 
+	<filter-mapping>  
+	 <filter-name>encoding</filter-name>  
+	 <url-pattern>*.do</url-pattern>  
+	</filter-mapping> 
+	
+	
+	<!-- Standard Action Servlet Configuration -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+ </servlet>
+ 
+  <!-- Standard Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet> 
+   <servlet-name>log4jInit</servlet-name> 
+   <servlet-class>cn.ewb.cq.servlet.Log4jInit</servlet-class> 
+   <init-param> 
+       <param-name>log4j-config-file</param-name> 
+       <param-value>log4j.properties</param-value> 
+   </init-param> 
+   <load-on-startup>1</load-on-startup> 
+  </servlet>
+  	
+  <servlet>
+	 <servlet-name>GetUnitList</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetUnitList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetUnitList</servlet-name>
+     <url-pattern>/GetUnitList</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	 <servlet-name>GetGrammarList</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetGrammarList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetGrammarList</servlet-name>
+     <url-pattern>/GetGrammarList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	 <servlet-name>GetGrammarDetail</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetGrammarDetail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetGrammarDetail</servlet-name>
+     <url-pattern>/GetGrammarDetail</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	 <servlet-name>GetMyGrammarList</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetMyGrammarList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetMyGrammarList</servlet-name>
+     <url-pattern>/GetMyGrammarList</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+	 <servlet-name>SearchGrammarList</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.SearchGrammarList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>SearchGrammarList</servlet-name>
+     <url-pattern>/SearchGrammarList</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	 <servlet-name>GetOpenId</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetOpenId</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetOpenId</servlet-name>
+     <url-pattern>/GetOpenId</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>
+	 <servlet-name>UseLisence</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.UseLisence</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>UseLisence</servlet-name>
+     <url-pattern>/UseLisence</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+	 <servlet-name>SearchIsMember</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.SearchIsMember</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>SearchIsMember</servlet-name>
+     <url-pattern>/SearchIsMember</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+	 <servlet-name>GetEndDate</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetEndDate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetEndDate</servlet-name>
+     <url-pattern>/GetEndDate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	 <servlet-name>GetNhkUrl</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetNhkUrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetNhkUrl</servlet-name>
+     <url-pattern>/GetNhkUrl</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	 <servlet-name>SearchListenList</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.SearchListenList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>SearchListenList</servlet-name>
+     <url-pattern>/SearchListenList</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	 <servlet-name>GetListenInfo</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetListenInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetListenInfo</servlet-name>
+     <url-pattern>/GetListenInfo</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+	 <servlet-name>SearchMovieList</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.SearchMovieList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>SearchMovieList</servlet-name>
+     <url-pattern>/SearchMovieList</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+	 <servlet-name>GetMovieInfo</servlet-name>
+	 <servlet-class>cn.ewb.cq.servlet.GetMovieInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>GetMovieInfo</servlet-name>
+     <url-pattern>/GetMovieInfo</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+
+</web-app>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="cn.ewb.cq.domain">
+
+	<class name="Pwd" table="tm_pwd">
+		<id name="id" length="50">
+			<generator class="foreign">
+				<param name="property">userInfo</param>
+			</generator>
+		</id>
+		<property name="pwd" length="20" column = "PWD" />
+		<property name="createId" length="20" column = "CREATE_ID"/>	
+		<property name="createTime" column = "CREATE_TIME"/>
+		<property name="updateId" length="20" column = "UPDATE_ID"/>
+		<property name="updateTime" column = "UPDATE_TIME"/>
+		<one-to-one name ="userInfo" constrained="true"/>
+	</class>
+	
+</hibernate-mapping>

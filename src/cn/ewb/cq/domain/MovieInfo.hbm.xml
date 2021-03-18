@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="cn.ewb.cq.domain">
+
+	<class name="MovieInfo" table="TC_MOVIE_INFO">
+		<id name="id" length="50">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="movieType" length="2" column="movie_type"/>
+		<property name="movieName" length="50" column="movie_name"/>
+		<property name="movieUrl" length="1000" column="movie_url"/>
+		<property name="orderNum"  column="order_Num"/>
+		<property name="delFlg" length="1" column="del_flg"/>
+		<property name="createId" length="20" column = "create_id"/>	
+		<property name="createTime" column = "create_time"/>
+		<property name="updateId" length="20" column = "update_id"/>
+		<property name="updateTime" column = "update_time"/>
+	</class>
+</hibernate-mapping>
